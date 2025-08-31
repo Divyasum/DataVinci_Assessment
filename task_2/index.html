@@ -71,7 +71,7 @@
 
        categoryCheckboxes.forEach(cb => {
            cb.addEventListener("change", (e) => {
-              updateEachCategory(e);
+              //updateEachCategory(e);
                updateSelectAll();
            });
        });
@@ -97,18 +97,20 @@
                [...fruits].every(f => f.checked) &&
                [...vegetables].every(v => v.checked);
        }
-    
-       function updateEachCategory(e){
-        const checked = e.target.checked; 
-       const category=e.target.getAttribute('data-category')
-       if(category==="vegetables"){
-        [...vegetables].forEach(cb => cb.checked = checked);
-       }
-       else if(category==="fruits"){
-        [...fruits].forEach(cb => cb.checked = checked);
-       }
 
-       }
+       //task fixed
+    
+       function updateEachCategory(e) {
+            const checked = e.target.checked;
+            const category = e.target.getAttribute('data-category')
+            if (category === "vegetables") {
+                [...vegetables].forEach(cb => cb.checked = checked);
+            }
+            else if (category === "fruits") {
+                [...fruits].forEach(cb => cb.checked = checked);
+            }
+
+        }
        
    </script>
 </body>
